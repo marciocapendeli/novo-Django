@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Controle de Visitantes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Controle de Visitantes</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'admin:index' %}">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h2>Visitantes Aguardando Autorização</h2>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h2>Visitas Finalizadas</h2>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h2>Visitantes Registrados no Mês</h2>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h2>Visitantes no Condomínio</h2>
+                <p>0</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
