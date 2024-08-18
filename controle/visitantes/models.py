@@ -34,7 +34,7 @@ class Visitante(models.Model):
         null=True,
     )
 
-    numero_casa = models.DateTimeField(
+    horario_chegada = models.DateTimeField(
         verbose_name="Horário de Chegada na Portaria",
         auto_now_add=True,
     )

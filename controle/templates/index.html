@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,11 @@
             <h1>Controle de Visitantes</h1>
             <nav>
                 <ul>
-                    <li><a href="{% url 'admin:index' %}">Home</a></li>
+                    <li><a href="{% url 'admin:index' %}">Administrador</a></li>
                 </ul>
             </nav>
         </header>
-        
+
         <main>
             <div class="card">
                 <h2>Visitantes Aguardando Autorização</h2>
@@ -39,24 +40,24 @@
 
             <!-- Tabela de Visitantes -->
             <h2>Lista de Visitantes</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Nome Completo</th>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Nome completo</th>
                         <th>CPF</th>
-                        <th>Número da Casa</th>
-                        <th>Horário de Autorização</th>
-                        <th>Morador Responsável</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for visitante in todos_visitantes %}
+                        <th>Horário de chegada</th>
+                        <th>Horário da autorização</th>
+                        <th>Autorizado por</th>
+                        <th>Mais informações</th>
+                    </thead>
+
+                    <tbody>
+                        {% for visitante in todos_visitantes %}
                         <tr>
                             <td>{{ visitante.nome_completo }}</td>
                             <td>{{ visitante.cpf }}</td>
-                            <td>{{ visitante.numero_casa }}</td>
-                            <td>{{ visitante.horario_autorizacao|date:"d de F de Y às H:i" }}</td>
+                            <td>{{ visitante.horario_chegada }}</td>
+                            <td>{{ visitante.horario_autorizacao }}</td>
                             <td>{{ visitante.morador_responsavel }}</td>
                             <td>
                                 <a href="{#}">
@@ -64,14 +65,16 @@
                                 </a>
                             </td>
                         </tr>
-                    {% empty %}
-                        <tr>
-                            <td colspan="6">Nenhum visitante encontrado.</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+           
+
         </main>
     </div>
 </body>
+
 </html>
