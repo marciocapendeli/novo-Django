@@ -2,12 +2,12 @@
     box-sizing: border-box;
 }
 
-a { 
-    color: #007BFF; /* Cor azul padrão para links */
+a {
+    color: #0056b3; /* Azul mais escuro para um visual mais profissional */
     text-decoration: none; /* Remove o sublinhado padrão dos links */
 }
 
-a:hover { 
+a:hover {
     text-decoration: underline; /* Adiciona um sublinhado ao passar o mouse */
 }
 
@@ -15,7 +15,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Fundo cinza claro para um visual mais sóbrio */
+    background-color: #e9ecef; /* Fundo cinza claro para um visual sóbrio */
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
 header {
     background: #343a40; /* Cinza escuro */
     color: #ffffff;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -42,17 +42,17 @@ nav ul li {
 }
 
 nav a {
-    background-color: #007bff; /* Azul para o botão Home */
+    background-color: #0056b3; /* Azul mais escuro para o botão Home */
     color: white; /* Texto branco para o botão */
     padding: 10px 20px; /* Tamanho do botão */
     border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave */
 }
 
 nav a:hover {
-    background-color: #0056b3; /* Azul escuro ao passar o mouse */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+    background-color: #003d7a; /* Azul ainda mais escuro ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
 }
 
 main {
@@ -65,8 +65,8 @@ main {
 .card {
     background: #ffffff; /* Branco para os cartões */
     border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
-    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    padding: 15px;
     flex: 1 1 calc(25% - 20px); /* Faz com que os cartões ocupem 25% da largura com margens */
     margin: 10px;
     text-align: center;
@@ -78,10 +78,20 @@ main {
 }
 
 .card p {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #495057; /* Cor do texto */
 }
+
+.table-container {
+    margin-top: 20px;
+}
+
+.table-container h2 {
+    margin-bottom: 15px;
+    color: #343a40; /* Cor do texto do título da tabela */
+}
+
 .table-responsive {
     overflow-x: auto; /* Permite rolar horizontalmente em telas menores */
 }
@@ -89,10 +99,9 @@ main {
 .table {
     width: 100%;
     border-collapse: collapse; /* Remove espaçamento entre bordas das células */
-    margin-top: 20px;
     background: #ffffff; /* Fundo branco para a tabela */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor da tabela */
     border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor da tabela */
 }
 
 .table thead {
@@ -101,25 +110,23 @@ main {
 }
 
 .table th, .table td {
-    padding: 15px; /* Espaçamento interno das células */
+    padding: 12px; /* Espaçamento interno das células */
     text-align: left; /* Alinhamento do texto à esquerda */
     border-bottom: 1px solid #dee2e6; /* Linha de borda entre as linhas */
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f8f9fa; /* Cor de fundo alternada para linhas pares */
+    background-color: #f1f3f5; /* Cor de fundo alternada para linhas pares */
 }
 
 .table tbody tr:hover {
-    background-color: #e9ecef; /* Cor de fundo ao passar o mouse sobre a linha */
+    background-color: #e2e6ea; /* Cor de fundo ao passar o mouse sobre a linha */
 }
 
 .table a {
-    color: #007bff; /* Cor dos links na tabela */
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: #0056b3; /* Cor dos links na tabela */
 }
 
 .table a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
-

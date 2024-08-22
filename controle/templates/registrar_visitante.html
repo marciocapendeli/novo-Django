@@ -1,13 +1,4 @@
-
-<!--esse botao deve ser colocado la no index.html ai ele faz a ligação do template controle de acesso para o porteiro preencher.
- 
-            <div class="card">
-                <h2><a href="{% url 'controle_acesso' %}">Controle de Acesso</a></h2>
-            </div>
-            -->
-
-{% load static %}  
-
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <title>Controle de Acesso</title>
+    <title>Registrar Visitante</title>
 </head>
 <body>
     <div class="container">
@@ -29,7 +20,7 @@
         </header>
 
         <main>
-            <form method="post" action="{% url 'adicionar_visitante' %}">
+            <form method="post" action="#">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Cadastrar Visitante</button>
