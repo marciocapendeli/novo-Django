@@ -8,7 +8,7 @@ from visitantes.views import registrar_visitante
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='usuarios'),
-    path('registrar/', registrar_visitante, name='registrar_visitante'),
-    path('', index, name='index'),#adicionado
+    path('registrar-visitante/', registrar_visitante, name='registrar_visitante'),
+    path('', index, name='index'),#adicionado 
     
 ]
