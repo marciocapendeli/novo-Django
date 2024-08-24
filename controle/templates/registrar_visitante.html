@@ -1,31 +1,28 @@
-{% load static %}
+{% extends "base.html"%}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <title>Registrar Visitante</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Controle de Acesso</h1>
-            <nav>
-                <ul>
-                    <li><a href="{% url 'index' %}">Voltar ao Dashboard</a></li>
-                </ul>
-            </nav>
-        </header>
+{% block conteudo %}
+<div class="container">
+    <header>
+        <h1>Controle de Acesso</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Voltar ao Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <form method="post" action="#">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Cadastrar Visitante</button>
-            </form>
-        </main>
-    </div>
-</body>
-</html>
+    <main>
+       <!-- <form method="post" action="#">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Cadastrar Visitante</button>
+        </form>
+        -->
+        {{form}}
+        
+    </main>
+</div>
+<br><br>
+
+
+{% endblock conteudo %}

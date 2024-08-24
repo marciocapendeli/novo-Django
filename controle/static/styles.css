@@ -130,3 +130,20 @@ main {
 .table a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+/* Estilização para o rodapé */
+.rodape {
+    background-color: #343a40; /* Fundo cinza escuro, igual ao cabeçalho */
+    color: #ffffff; /* Texto branco */
+    padding: 15px 0; /* Espaçamento interno superior e inferior */
+    text-align: center; /* Centraliza o texto */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.rodape-link {
+    color: #ffffff; /* Cor do link no rodapé */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+.rodape-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}

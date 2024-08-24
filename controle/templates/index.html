@@ -1,83 +1,75 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <title>Controle de Visitantes</title>
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <h1>Controle de Visitantes</h1>
-            <nav>
-                <ul>
-                    <li><a href="{% url 'admin:index' %}">Administrador</a></li>
-                </ul>
-                <!-- Botão para direcionar ao registrar_visitante -->
-                <div class="card">
-                    <h2><a href="{% url 'registrar_visitante' %}">Registrar visitante</a></h2>
-                </div>
-            </nav>
-        </header>
-
-        <main>
+{% block conteudo%} 
+<div class="container">
+    <header>
+        <h1>Controle de Visitantes</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'admin:index' %}">Administrador</a></li>
+            </ul>
+            <!-- Botão para direcionar ao registrar_visitante -->
             <div class="card">
-                <h2>Visitantes Aguardando Autorização</h2>
-                <p>0</p>
+                <h2><a href="{% url 'registrar_visitante' %}">Registrar visitante</a></h2>
             </div>
-            <div class="card">
-                <h2>Visitas Finalizadas</h2>
-                <p>0</p>
-            </div>
-            <div class="card">
-                <h2>Visitantes Registrados no Mês</h2>
-                <p>0</p>
-            </div>
-            <div class="card">
-                <h2>Visitantes no Condomínio</h2>
-                <p>0</p>
-            </div>
+        </nav>
+    </header>
 
-            <!-- Tabela de Visitantes -->
-            <div class="table-container">
-                <h2>Lista de Visitantes</h2>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Nome completo</th>
-                                <th>CPF</th>
-                                <th>Horário de chegada</th>
-                                <th>Horário da autorização</th>
-                                <th>Autorizado por</th>
-                                <th>Mais informações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for visitante in todos_visitantes %}
-                            <tr>
-                                <td>{{ visitante.nome_completo }}</td>
-                                <td>{{ visitante.cpf }}</td>
-                                <td>{{ visitante.horario_chegada }}</td>
-                                <td>{{ visitante.horario_autorizacao }}</td>
-                                <td>{{ visitante.morador_responsavel }}</td>
-                                <td>
-                                    <a href="{#}">
-                                        Ver informações
-                                    </a>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </main>
-    </div>
-</body>
+    <main>
+        <div class="card">
+            <h2>Visitantes Aguardando Autorização</h2>
+            <p>0</p>
+        </div>
+        <div class="card">
+            <h2>Visitas Finalizadas</h2>
+            <p>0</p>
+        </div>
+        <div class="card">
+            <h2>Visitantes Registrados no Mês</h2>
+            <p>0</p>
+        </div>
+        <div class="card">
+            <h2>Visitantes no Condomínio</h2>
+            <p>0</p>
+        </div>
 
-</html>
+        <!-- Tabela de Visitantes -->
+        <div class="table-container">
+            <h2>Lista de Visitantes</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome completo</th>
+                            <th>CPF</th>
+                            <th>Horário de chegada</th>
+                            <th>Horário da autorização</th>
+                            <th>Autorizado por</th>
+                            <th>Mais informações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for visitante in todos_visitantes %}
+                        <tr>
+                            <td>{{ visitante.nome_completo }}</td>
+                            <td>{{ visitante.cpf }}</td>
+                            <td>{{ visitante.horario_chegada }}</td>
+                            <td>{{ visitante.horario_autorizacao }}</td>
+                            <td>{{ visitante.morador_responsavel }}</td>
+                            <td>
+                                <a href="{#}">
+                                    Ver informações
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<br><br>
+
+{% endblock conteudo %}
