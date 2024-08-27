@@ -12,8 +12,34 @@
         </nav>
     </header>
 
+    <p class="paragrafo">
+        <small>
+            (*) Campo obrigatório
+        </small>
+    </p>
+
     <main>
-       <!-- 
+        <form method="post">
+            <div class="formulario">
+                {% csrf_token %}
+
+                {% for field in form %}
+                <div class="grupo">
+                    <label>{{ field.label }}</label>
+                    {% if field.field.required %} * {% endif %}
+                    {% render_field field placeholder=field.label class="form-control" %}
+                </div>
+                {% endfor %}
+
+                <div class="div-texto">
+                    <button class="botao" type="submit">
+                        <span class="texto">Registrar Visitante</span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+          <!-- 
        abaixo o form comun nao usual para o projeto:
 
        <form method="post" action="#">
@@ -29,20 +55,9 @@
     -->
         <!-- abaixo o formulario ja estilizad com o app 'widget_tweaks': 
     -->
-    <form method="post">
-        <div class="form-container">
-            {% csrf_token %}
-    
-            {% for field in form %}
-            <div class="form-group">
-                {% render_field field placeholder=field.label class="form-control" %}
-            </div>
-            {% endfor %}
-        </div>
-    </form>
-    
-        
+
     </main>
+    
 </div>
 <br><br>
 
