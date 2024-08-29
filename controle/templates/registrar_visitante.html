@@ -2,6 +2,7 @@
 
 {%load widget_tweaks%}
 {% block conteudo %}
+
 <div class="container">
     <header>
         <h1>Controle de Acesso</h1>
@@ -18,8 +19,23 @@
         </small>
     </p>
 
+
+
     <main>
+        
         <form method="post">
+            <!-- imprimindo erro na falta de preenchimendo do placehouder-->
+    {% if form.errors %}
+        {% for field in form %}
+            {% if field.errors %}
+                {% for erro in field.errors %}
+                    <div class="erros">
+                    {{ erro }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
             <div class="formulario">
                 {% csrf_token %}
 
@@ -57,8 +73,8 @@
     -->
 
     </main>
-    
-</div>
+</div> 
+
 <br><br>
 
 

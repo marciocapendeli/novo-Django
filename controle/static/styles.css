@@ -221,3 +221,45 @@ main {
     font-weight: bold; /* Negrito para o texto do botão */
 }
 
+/*estilizando a mensagerm de cadastro realizado*/
+.alerta-sucesso {
+    
+    background-color: #28a745; /* Verde claro para sucesso */
+    color: #fff; /* Texto branco */
+    border: 1px solid #1e7e34; /* Borda verde escura para destaque */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Fonte em negrito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    transition: opacity 0.5s ease-in-out; /* Transição suave para opacidade */
+}
+
+/* Estilo para mensagens de sucesso quando escondidas */
+.alerta-sucesso.fade-out {
+    opacity: 0;
+    display: none;
+}
+
+/*estilização da parte dos erros nao preenhcendo placehouder*/
+
+.erros {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Texto vermelho escuro para contraste */
+    border: 1px solid #f5c6cb; /* Borda vermelha clara */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+    font-weight: bold; /* Fonte em negrito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destaque */
+}
+
+/* Estilo adicional para um ícone de erro (opcional) */
+.erros::before {
+    content: "⚠️"; /* Ícone de aviso ou erro */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 16px; /* Tamanho do ícone */
+}
+

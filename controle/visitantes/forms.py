@@ -11,3 +11,19 @@ class VisitanteForm(forms.ModelForm):
             "numero_casa",
             "placa_veiculo",
         )
+
+        error_messages = {
+            "nome_completo": {
+                "required": "O nome completo é obrigatorio"
+            },
+            "cpf":{
+                "required": "O CPF é um campo obrigatorio"
+            },
+            "data_nascimento":{
+                "required": "A data é obrigatoria",
+                "invalid": "A data precisa ter o formato DD/MM/YYYY"
+            },
+            "numero_casa":{
+                "required": "O numero da casa é um campo obrigatorio"
+            }
+        }
