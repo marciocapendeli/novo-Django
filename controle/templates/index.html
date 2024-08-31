@@ -69,7 +69,7 @@
                             <td>{{ visitante.horario_autorizacao }}</td>
                             <td>{{ visitante.morador_responsavel }}</td>
                             <td>
-                                <a href="{#}">
+                                <a href="{% url 'informacoes_visitante' id=visitante.id %}">
                                     Ver informações
                                 </a>
                             </td>

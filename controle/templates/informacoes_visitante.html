@@ -1,0 +1,135 @@
+
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Visitante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .detail {
+            margin-bottom: 15px;
+        }
+        .detail label {
+            font-weight: bold;
+        }
+        .detail p {
+            margin: 5px 0;
+        }
+        .detail .value {
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <h1>Informações do Visitante</h1>
+
+    <div class="detail">
+        <label>Nome Completo</label>
+        <input type="text" class="detail" value="{{ visitante.nome_completo }}" disabled> 
+    </div>
+
+    <div class="detail">
+        <label>CPF:</label>
+        <input type="text" class="detail" value="{{ visitante.cpf }}" disabled>
+    </div>
+
+    <div class="detail">
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="text" class="detail" value="{{ visitante.data_nascimento }}" disabled>
+    </div>
+
+    <div class="detail">
+        <label>Número da Casa</label>
+        <input type="text" class="detail" value="{{ visitante.numero_casa }}"disabled>
+
+    </div>
+
+    <div class="detail">
+        <label>Placa do Veículo</label>
+        <input type="text" class="detail" value="{{ visitante.placa_veiculo }}"disabled>
+
+    </div>
+
+    <div class="detail">
+        <label>Horário de Chegada</label>
+        <input type="text" class="detail" value="{{ visitante.horario_chegada }}"disabled>
+
+    </div>
+
+    <div class="detail">
+        <label>Horário de Saída</label>
+        <input type="text" class="detail" value="{{ visitante.get_horario_saida}}" disabled>
+
+    </div>
+
+    <div class="detail">
+        <label>Horário de Autorização de entrada</label>
+        <input type="text" class="detail" value="{{ visitante.horario_autorizacao}}"disabled>
+
+    </div>
+
+    <div class="detail">
+        <label>Morador Responsável</label>
+        <input type="text" class="detail" value="{{ visitante.morador_responsavel}}"disabled>
+
+    </div>
+
+    <p class="detail">
+    <small>
+        visitante registrado em 15/05/2018 por {{visitante.registrado_por}}
+    </small>
+    </p>
+
+    <a href="{#}">Voltar para a lista de visitantes</a>
+</div>
+
+</body>
+</html>
+
+{% endblock conteudo %}

@@ -263,3 +263,50 @@ main {
     font-size: 16px; /* Tamanho do ícone */
 }
 
+/*informaçoes visitantes*/
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .detail {
+            margin-bottom: 15px;
+        }
+        .detail label {
+            font-weight: bold;
+        }
+        .detail p {
+            margin: 5px 0;
+        }
+        .detail .value {
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
