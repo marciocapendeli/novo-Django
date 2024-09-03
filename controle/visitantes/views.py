@@ -1,8 +1,9 @@
-from django.shortcuts import render,redirect, get_object_or_404
-from visitantes.forms import VisitanteForm
+from django.shortcuts import render, redirect, get_object_or_404
+from . forms import(VisitanteForm, AutorizaVisitanteForm)
 from porteiros.models import Porteiro
 from visitantes.models import Visitante
 from django.contrib import messages
+from django.utils import timezone
 
 
 
@@ -47,9 +48,32 @@ def informacoes_visitante(request, id):
         id=id
     )
 
+    form = AutorizaVisitanteForm()
+    if request.method == "POST":
+        form = AutorizaVisitanteForm(
+            request.POST,
+            instance=visitante
+        )   
+
+        if form.is_valid():
+            form.save(commit=False)
+
+            visitante.status = "EM_VISITA"
+            visitante.horario_autorizacao = timezone.now()
+
+            visitante.save()
+
+            messages.success(
+                request,
+                "Visitante autorizado com sucesso"
+            )
+            return redirect ("index")
+
+
     context = {
         "nome_pagina": "Informações do Visitante",
-        "visitante": visitante
+        "visitante": visitante,
+        "form": form,
     }
 
     return render(request, "informacoes_visitante.html", context)

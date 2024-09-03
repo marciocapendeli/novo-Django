@@ -59,6 +59,19 @@ class Visitante(models.Model):
         blank=True,
     )
 
+    STATUS_VISITANTE = [
+        ("AGUARDANDO", " Aguardando autorização"),
+        ("EM_VISITA", "Em visita"),
+        ("FINALIZADO", "Visita finalizada"),
+    ]
+
+    status = models.CharField(
+        verbose_name = "Status",
+        max_length = 10,
+        choices = STATUS_VISITANTE,
+        default = "AGUARDANDO",
+    )
+
     def get_horario_saida(self):
         if self.horario_saida:
             return self.horario_saida
